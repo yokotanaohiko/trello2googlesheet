@@ -1,10 +1,12 @@
 from flask import Flask, request
+import json
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return dict(request.args)
+    print(json.dumps(dict(request.args), indent=2, ensure_ascii=False))
+    return str(dict(request.args))
 
 if __name__ == '__main__':
     app.run()
