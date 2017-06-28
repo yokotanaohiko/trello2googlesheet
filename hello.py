@@ -3,7 +3,7 @@ import json
 
 app = Flask(__name__)
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['POST', 'GET'])
 def hello_world():
     print(json.dumps(dict(request.args), indent=2, ensure_ascii=False))
     print(str(request.data))
